@@ -1,0 +1,67 @@
+{
+    "type": "object",
+    "properties": {
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "vmScaleSetName": {
+            "required": true,
+            "type": "string"
+        },
+        "instanceId": {
+            "required": true,
+            "type": "string"
+        },
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Capture Virtual Machine parameters.",
+            "properties": {
+                "commandId": {
+                    "description": "The run command id.",
+                    "type": "string"
+                },
+                "parameters": {
+                    "description": "The run command parameters.",
+                    "items": {
+                        "description": "Describes the properties of a run command parameter.",
+                        "properties": {
+                            "name": {
+                                "description": "The run command parameter name.",
+                                "type": "string"
+                            },
+                            "value": {
+                                "description": "The run command parameter value.",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "value"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "script": {
+                    "description": "Optional. The script to be executed.  When this value is given, the given script will override the default script of the command.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "commandId"
+            ],
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

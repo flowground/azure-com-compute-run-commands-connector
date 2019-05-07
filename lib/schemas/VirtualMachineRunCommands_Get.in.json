@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "location": {
+            "required": true,
+            "type": "string",
+            "pattern": "^[-\\w\\._]+$"
+        },
+        "commandId": {
+            "required": true,
+            "type": "string"
+        },
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
